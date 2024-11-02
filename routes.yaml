@@ -1,0 +1,10 @@
+# .platform/routes.yaml
+"https://www.{default}/":
+  type: upstream
+  upstream: "ll_project:http"
+  cache:
+    enabled: false  # Cache disabled for HTTPS
+
+"http://www.{default}/":
+  type: redirect
+  to: "https://{default}/"  
